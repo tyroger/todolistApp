@@ -15,6 +15,9 @@ namespace todolistApp.Pages
         [BindProperty]
         public string? Description { get; set; }
 
+        [BindProperty]
+        public bool IsComplete { get; set; }
+
         public List<Todo>? taskList = new();
 
         public void OnGet()
@@ -25,11 +28,15 @@ namespace todolistApp.Pages
 
         public ActionResult OnPost()
         {
+            TodoCompletedUpdating();
             //checkListContents added to dispaly content when debug
             List<Todo> checkListContents = updateList();
             return RedirectToAction("edition");
         }
 
+        /*
+        *Update the list when adding a new todo
+        */
         public List<Todo> updateList()
         {
             Todo newTask = new Todo();
@@ -37,6 +44,24 @@ namespace todolistApp.Pages
             newTask.Description = Description;
             TodoService.AddNewTodo(newTask);
             return TodoService.GetTodolist();
+        }
+
+        /*
+        *Update the list when the todo state changes
+        * seems not working...
+        */
+        public List<Todo> TodoCompletedUpdating()
+        {
+            taskList = TodoService.GetTodolist();
+            foreach (Todo task in taskList)
+            {
+                if (IsComplete != task.IsTaskComplete)
+                {
+                    TodoService.ModifyTodoStatus(task.Id);
+                }
+            }
+            return TodoService.GetTodolist();
+
         }
     }
 }

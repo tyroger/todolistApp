@@ -9,7 +9,7 @@ static class TodoService
     static TodoService()
     {
         TodoList = new List<Todo> {
-            new Todo{Id=1, Title = "Toulouse", Description = "visite de la ville rose", IsTaskComplete = false},
+            new Todo{Id=1, Title = "Toulouse", Description = "visite de la ville rose"},
             new Todo{Id=2, Title = "code", Description = "apprendre le c#", IsTaskComplete = true},
         };
     }
@@ -34,6 +34,14 @@ static class TodoService
     {
         todo.Id = TodoList.Count() + 1;
         TodoList.Add(todo);
+    }
+
+    public static void ModifyTodoStatus(int Index)
+    {
+        Todo TodoToBeModified = GetATodo(Index);
+
+        TodoToBeModified.IsTaskComplete = !TodoToBeModified.IsTaskComplete;
+
     }
 
 }

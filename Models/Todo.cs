@@ -6,5 +6,5 @@ public class Todo
     [Required(ErrorMessage = "Title is required")]
     public string? Title { get; set; }
     public string? Description { get; set; }
-    public bool IsTaskComplete { get; set; }
+    public bool IsTaskComplete { get; set; } = false;
 }
