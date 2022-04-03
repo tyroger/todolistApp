@@ -16303,6 +16303,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/tyroger/labo/xcSharp/todolistApp/Pages/Detail.cshtml",
+      "TargetPath": "Pages\\Detail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/tyroger/labo/xcSharp/todolistApp/Pages/_ViewStart.cshtml",
       "TargetPath": "Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -16315,6 +16320,11 @@
     {
       "FilePath": "/Users/tyroger/labo/xcSharp/todolistApp/Pages/Index.cshtml",
       "TargetPath": "Pages\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/tyroger/labo/xcSharp/todolistApp/Pages/Edition.cshtml",
+      "TargetPath": "Pages\\Edition.cshtml",
       "FileKind": "mvc"
     },
     {

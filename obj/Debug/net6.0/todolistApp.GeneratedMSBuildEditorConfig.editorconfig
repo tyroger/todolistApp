@@ -15,6 +15,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/tyroger/labo/xcSharp/todolistApp
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/tyroger/labo/xcSharp/todolistApp/Pages/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/tyroger/labo/xcSharp/todolistApp/Pages/Edition.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRWRpdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/tyroger/labo/xcSharp/todolistApp/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

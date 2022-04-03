@@ -1,0 +1,49 @@
+﻿@page
+@using todolistApp.Models
+@model todolistApp.Pages.EditionModel
+@{}<h3>Editor</h3>
+
+<div class="row">
+
+  <div class="col-6">
+<form action="" method="post">
+    <div>
+        <label for="title">title</label>
+        <input type="text" name="title" id="" asp-for="Title">
+    </div>
+        <div>
+        <label for="Description">Description</label>
+        <input type="text" name="Description" id="" asp-for="Description">
+    </div>
+    <div>
+        <button type="submit">Valider</button>
+    </div>
+</form>
+      </div>
+
+      <div class="col-6">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Done</th>
+              <th>task N°</th>
+              <th>Title</th>
+              <th>State</th>
+            </tr>
+          </thead>
+          <tbody>
+                @foreach (Todo task in Model.taskList)
+                {
+                                      <tr>
+                                          <td></td>
+                                          <td>@task.Id</td>
+                                          <td>@task.Title</td>
+                                          <td>@(task.IsTaskComplete?"Task complete":"Task to be done")</td>
+                                        </tr>
+                }
+          </tbody>
+        </table>
+
+      </div>
+
+    </div>
