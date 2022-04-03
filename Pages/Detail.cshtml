@@ -1,4 +1,26 @@
-﻿@page
+﻿@page "{id}"
 @model todolistApp.Pages.DetailModel
 @{
+    var askedTodoId = RouteData.Values["id"];
 }
+
+<a asp-page="/edition"><button>back to edition</button></a>
+
+<div class="row">
+    <div class="col-6">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>@Model.askedTodo.Title</td>
+                    <td>@Model.askedTodo.Description</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

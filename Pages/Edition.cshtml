@@ -34,12 +34,13 @@
           <tbody>
                 @foreach (Todo task in Model.taskList)
                 {
-                                      <tr>
-                                          <td></td>
-                                          <td>@task.Id</td>
-                                          <td>@task.Title</td>
-                                          <td>@(task.IsTaskComplete?"Task complete":"Task to be done")</td>
-                                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>@task.Id</td>
+                            <td>@task.Title</td>
+                            <td>@(task.IsTaskComplete?"Task complete":"Task to be done")</td>
+                            <td><a class="btn btn-outline-info btn-sm" asp-page="/detail" asp-route-id="@task.Id">More info</a></td>
+                        </tr>
                 }
           </tbody>
         </table>
