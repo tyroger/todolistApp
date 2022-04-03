@@ -20,9 +20,23 @@ namespace todolistApp.Pages
         public void OnGet()
         {
             taskList = TodoService.GetTodolist();
+            taskList.Sort((x, y) => Comparer<double>.Default.Compare(y.Id, x.Id));
+        }
 
+        public ActionResult OnPost()
+        {
+            //checkListContents added to dispaly content when debug
+            List<Todo> checkListContents = updateList();
+            return RedirectToAction("edition");
+        }
 
-
+        public List<Todo> updateList()
+        {
+            Todo newTask = new Todo();
+            newTask.Title = Title;
+            newTask.Description = Description;
+            TodoService.AddNewTodo(newTask);
+            return TodoService.GetTodolist();
         }
     }
 }

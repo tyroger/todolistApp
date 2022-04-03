@@ -30,4 +30,10 @@ static class TodoService
         return null;
     }
 
+    public static void AddNewTodo(Todo todo)
+    {
+        todo.Id = TodoList.Count() + 1;
+        TodoList.Add(todo);
+    }
+
 }
