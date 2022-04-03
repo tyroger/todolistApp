@@ -5,23 +5,25 @@
 
 <div class="row">
 
-  <div class="col-6">
-<form action="" method="post">
-    <div>
-        <label for="title">title</label>
-        <input type="text" name="title" id="" asp-for="Title" required>
+  <div class="col-6 mt-3">
+    <h5>Add a new todo</h5>
+<form class="form" action="" method="post">
+    <div class="form-group mt-3">
+        <label for="title">Title</label>
+        <input class="form-control" type="text" name="title" id="" asp-for="Title" required>
     </div>
-        <div>
+        <div class="form-group mt-3">
         <label for="Description">Description</label>
-        <input type="text" name="Description" id="" asp-for="Description">
+        <textarea class="form-control" name="Description" id="" asp-for="Description" cols="20" rows="5"></textarea>
     </div>
-    <div>
-        <button type="submit">Valider</button>
+    <div  class="mt-3">
+        <button type="submit" class="btn btn-outline-primary">Save</button>
     </div>
 </form>
       </div>
 
-      <div class="col-6">
+      <div class="col-6 mt-3 text-center">
+        <h5>Todos list</h5>
         <table class="table">
           <thead>
             <tr>
@@ -32,16 +34,16 @@
             </tr>
           </thead>
           <tbody>
-                @foreach (Todo task in Model.taskList)
-                {
-                            <tr>
-                                <td></td>
-                                <td>@task.Id</td>
-                                <td>@task.Title</td>
-                                <td>@(task.IsTaskComplete?"Task complete":"Task to be done")</td>
-                                <td><a class="btn btn-outline-info btn-sm" asp-page="/detail" asp-route-id="@task.Id">More info</a></td>
-                            </tr>
-                }
+        @foreach (Todo task in Model.taskList)
+        {
+                          <tr>
+                              <td>@Html.CheckBox("NewTodo.isTaskComplete",(task.IsTaskComplete))</td>
+                              <td>@task.Id</td>
+                              <td>@task.Title</td>
+                              <td>@(task.IsTaskComplete?"Task complete":"Task to be done")</td>
+                              <td><a asp-page="/detail" asp-route-id="@task.Id"><small>More detail</small></a></td>
+                          </tr>
+        }
           </tbody>
         </table>
 

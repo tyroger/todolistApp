@@ -4,11 +4,13 @@
     var askedTodoId = RouteData.Values["id"];
 }
 
-<a asp-page="/edition"><button>back to edition</button></a>
+<a asp-page="/edition"><button class="btn btn-outline-primary">Back to editor</button></a>
 
-<div class="row">
-    <div class="col-6">
-        <table class="table">
+<div class="row mt-3">
+    <div class="col-6 mt-3">
+       <h5>Todo detail</h5>
+
+        <table class="table text-center">
             <thead>
                 <tr>
                     <th>Title</th>
